@@ -1,3 +1,10 @@
 from django.contrib import admin
+from rango.models import Category, Page
 
-# Register your models here.
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'views', 'likes') 
+
+
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Page)
